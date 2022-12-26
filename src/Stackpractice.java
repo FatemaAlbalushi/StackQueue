@@ -15,16 +15,22 @@ public class Stackpractice {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String str = "Something";
-		//String str1 = "{int i=0;}{int x=1 {{}}}";
-		// String str1 = "{{int x=0;}}}";
-		String str1 = "{";
+		String str1 = "{int i=0;}{int x=1 {{}}}";
+		String str2 = "{{int x=0;}}}";
+		String str3 = "{";
+		String str4 = "}";
+		
 		System.out.println("Print the reverse string of " + str);
 		reString(str);
 		System.out.println();
 		System.out.println("Print if there is open barantheses " + countBarn(str1));
+		System.out.println("Print if there is open barantheses " + countBarn(str2));
+		System.out.println("Print if there is open barantheses " + countBarn(str3));
+		System.out.println("Print if there is open barantheses " + countBarn(str4));
 
 	}
 
+	
 	public static void reString(String userString) {
 
 		Stack<Character> mystack = new Stack<Character>();
@@ -50,7 +56,7 @@ public class Stackpractice {
 			else if (str.charAt(index) == '}') {
 				if (mystack1.empty()) {
 					return false;
-					
+
 				} else {
 					mystack1.pop();
 				}
@@ -58,8 +64,13 @@ public class Stackpractice {
 			}
 
 		}
+		if (mystack1.empty()) {
+			return true;
 
-		return true;
+		} else {
+			return false;
+		}
+
 	}
 
 }
