@@ -1,4 +1,7 @@
+import java.util.ArrayList;
 import java.util.Stack;
+
+import javax.swing.plaf.basic.BasicPasswordFieldUI;
 
 /**
  * 
@@ -19,6 +22,7 @@ public class Stackpractice {
 		String str2 = "{{int x=0;}}}";
 		String str3 = "{";
 		String str4 = "}";
+		String sentence = "Reverse me if you can";
 		
 		System.out.println("Print the reverse string of " + str);
 		reString(str);
@@ -27,6 +31,8 @@ public class Stackpractice {
 		System.out.println("Print if there is open barantheses " + countBarn(str2));
 		System.out.println("Print if there is open barantheses " + countBarn(str3));
 		System.out.println("Print if there is open barantheses " + countBarn(str4));
+		System.out.println("Print the reverse sentence of : " + sentence);
+		SplitString(sentence);
 
 	}
 
@@ -71,6 +77,19 @@ public class Stackpractice {
 			return false;
 		}
 
+	}
+	
+	
+	public static void SplitString(String sentence) {
+		
+		
+		String[] ReverArray= sentence.split("  ");
+	
+		for (int index = 0; index < ReverArray.length; index++) {
+			System.out.print(ReverArray[index]);
+
+		}
+		
 	}
 
 }
