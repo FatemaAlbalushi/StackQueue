@@ -33,6 +33,9 @@ public class Stackpractice {
 		System.out.println("Print if there is open barantheses " + countBarn(str4));
 		System.out.println("Print the reverse string of: " + sentence);
 		SplitString(sentence);
+		System.out.println();
+		System.out.println("Print the split string of: " + sentence);
+		ReverseString(sentence, ' ');
 
 	}
 
@@ -100,8 +103,24 @@ public class Stackpractice {
 	
 	public static ArrayList<String> ReverseString(String str, char ch) {
 		
-		
-		return null;
+	 
+	 ArrayList<String> arraylist1 = new ArrayList<>();
+	 char[] charstr= str.toCharArray();
+	 String wordString="";
+	 //wordString=wordString+charstr[i];
+	 
+	 for(int i=0; i<charstr.length;i++) {
+		 wordString=wordString+charstr[i];
+	 		//System.out.print(charstr[i]);	
+	 		if (charstr[i]==ch) {
+	 			arraylist1.add(wordString);
+	 			wordString = "";
+	 			//System.out.print(arraylist1);
+	 		}
+	 		
+	 }
+	 System.out.println(arraylist1);
+	 return arraylist1;
 		
 		
 	}
