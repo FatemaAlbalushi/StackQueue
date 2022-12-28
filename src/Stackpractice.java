@@ -27,17 +27,20 @@ public class Stackpractice {
 		String str7 = "([arr{(10)}])";
 		String sentence = "Reverse me if you can";
 		String sen = "NomberOfSeats";
+		
 		System.out.println("Print the reverse string of " + str);
 		reString(str);
 		System.out.println();
-		System.out.println("Print if there is open barantheses " + countBarn(str1));
-		System.out.println("Print if there is open barantheses " + countBarn(str2));
-		System.out.println("Print if there is open barantheses " + countBarn(str3));
-		System.out.println("Print if there is open barantheses " + countBarn(str4));
-		System.out.println("Print if there is open barantheses " + countBarn(str5));
-		System.out.println("Print if there is open barantheses " + countBarn(str6));
-		System.out.println("Print if there is open barantheses " + countBarn(str7));
 		System.out.println();
+		System.out.println("Print the validation of the string");
+		System.out.println("Valid: " + str1 + " "+ countBarn(str1));
+		System.out.println("Valid: " + str2 + " "+ countBarn(str2));
+		System.out.println("Valid: " + str3 + " "+ countBarn(str3));
+		System.out.println("Valid: " + str4 + " "+ countBarn(str4));
+		System.out.println("Valid: " + str5 + " "+ countBarn(str5));
+		System.out.println("Valid: " + str6 + " "+ countBarn(str6));
+		System.out.println("Valid: " + str7 + " "+ countBarn(str7));
+		System.out.println();  
 		System.out.println("Print the reverse string of: " + sentence);
 		RevString(sentence);
 		System.out.println();
