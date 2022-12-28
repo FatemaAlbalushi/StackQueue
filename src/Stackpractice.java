@@ -37,13 +37,22 @@ public class Stackpractice {
 		System.out.println("Print if there is open barantheses " + countBarn(str5));
 		System.out.println("Print if there is open barantheses " + countBarn(str6));
 		System.out.println("Print if there is open barantheses " + countBarn(str7));
-
+		System.out.println();
 		System.out.println("Print the reverse string of: " + sentence);
 		RevString(sentence);
 		System.out.println();
 		System.out.println("Print the split string of: " + sentence);
 		Split(sentence, ' ');
-		RevSstring(sen);
+		
+		System.out.println();
+		System.out.println("Print the split string of: " + sen);
+		SplitByChar(sen);
+		
+		System.out.println();
+		System.out.println();
+		System.out.println("Print the split string of: " + sentence);
+		RevStringSplit(sentence);
+		
 
 	}
 
@@ -63,6 +72,11 @@ public class Stackpractice {
 		}
 	}
 
+	/**
+	 * 
+	 * @param str
+	 * @return if the brackets is valid or not
+	 */
 	public static boolean countBarn(String str) {
 		Stack<Character> mystack1 = new Stack<Character>();
 
@@ -127,12 +141,15 @@ public class Stackpractice {
 
 	/**
 	 * 
-	 * @param sentence print the reverse string using .split
+	 * @param sentence 
+	 * print the reverse string using .split with spase
 	 */
 
 	public static void RevString(String sentence) {
 		Stack<String> mystack = new Stack<String>();
 		String[] myarr = sentence.split(" ");
+		
+		//ArrayList<String> myarr = Split(sentence, ' ');
 
 		for (String word : myarr) {
 			mystack.push(word);
@@ -144,10 +161,16 @@ public class Stackpractice {
 		}
 
 	}
+	
+	/**
+	 * 
+	 * @param sentence 
+	 * print the reverse string using .split with uppercase
+	 */
 
-	public static void RevSstring(String sentence) {
+	public static void SplitByChar(String sentence) {
 		Stack<String> mystack = new Stack<String>();
-		String[] myarr = sentence.split(" ");
+		String[] myarr = sentence.split("(?=[A-Z])");
 
 		for (String word : myarr) {
 			mystack.push(word);
@@ -162,10 +185,11 @@ public class Stackpractice {
 
 	/**
 	 * 
-	 * @param str
-	 * @param ch
-	 * @return the split
+	 * @param str:
+	 * @param ch:
+	 * @return the split sentence without using split method(impliminting the split method)
 	 */
+	
 	public static ArrayList<String> Split(String str, char ch) {
 		ArrayList<String> arraylist1 = new ArrayList<>();
 		char[] charstr = str.toCharArray();
@@ -178,9 +202,29 @@ public class Stackpractice {
 				wordString = "";
 			}
 		}
-		System.out.println(arraylist1);
 		return arraylist1;
+	}
+	
+	
+	/**
+	 * 
+	 * @param sentence: 
+	 * print the reverse sentence
+	 */
+	public static void RevStringSplit(String sentence) {
+		Stack<String> mystack = new Stack<String>();
+		ArrayList<String> myarr = Split(sentence, ' ');
+
+		for (String word : myarr) {
+			mystack.push(word);
+		}
+		while (!mystack.empty()) {
+
+			System.out.print(mystack.pop() + " ");
+
+		}
 
 	}
+	
 
 }
